@@ -8,10 +8,25 @@ private:
     double salary; //data hiding
 
 public:
+
+    string name;
+    string dept;
+    string subject;
+    
+    //non-parameterized
+    // Teacher(){
+    //     dept = "CMPN";
+    // }
+
+    //parameterized 
+    Teacher(string n, string d, string s, double sal){
+        name =n;
+        dept = d;
+        subject = s;
+        salary = sal;
+    }
     //properties//attributes
- string name;
- string dept;
- string subject;
+
  
 
  //methods/member functions
@@ -29,19 +44,26 @@ public:
   double getSalary(){
     return salary;
  }
+
+ void getinfo(){
+    cout << "name: " << name << endl;
+    cout << "subejct: " << subject << endl;
+
+ }
 };
 
 
 
 int main() {
-    Teacher t1; //Constructor Call
-    t1.name = "Mayank";
-    t1.subject = "C++";
-    t1.dept = "CMPN";
-    t1.setSalary(35000);
+    Teacher t1("Mayank" , "CMPN", "CPP", 44000); //Constructor Call
+    // t1.name = "Mayank";
+    // t1.subject = "C++";
+    // t1.setSalary(35000);
 
-    cout << t1.name << endl;
-    cout << t1.getSalary() << endl;
+    // cout << t1.dept << endl;
+    // cout << t1.getSalary() << endl;
+
+    t1.getinfo();
     return 0;
 
 }
