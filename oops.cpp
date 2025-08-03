@@ -15,11 +15,14 @@ class Student {
       *cgpaPtr = cgpa;
    }
 
-   Student(Student &obj){
-      this->name = obj.name;
-      cgpaPtr = new double;
-      *cgpaPtr = *obj.cgpaPtr;
+
+
+   //desctructor
+   ~Student(){
+      cout << "I delete Everything HEHE i am Destructor \n";
+      delete cgpaPtr;
    }
+
 
     void getinfo(){
     cout << "name: " << name << endl;
@@ -30,13 +33,9 @@ class Student {
 
 int main(){
    Student s1("mayank",8.4);
-   Student s2(s1);
+   
    s1.getinfo();
-
-   *(s2.cgpaPtr) = 9.2;
-   s1.getinfo();
-   s2.name = "Tejas";
-   s2.getinfo();
+   
    return 0;
 }
 
