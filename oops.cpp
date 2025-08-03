@@ -2,42 +2,85 @@
 #include <string>
 using namespace std;
 
-
-class Student {
-   public:
-    
+//--------------------------------------Inheritance----------------------------//
+class Person{
+public:
    string name;
-   double* cgpaPtr;
+   int age;
 
-   Student(string name, double cgpa){
-      this->name = name;
-      cgpaPtr = new double;
-      *cgpaPtr = cgpa;
+   //    Person(string name, int age){
+   //    this->name = name;
+   //    this->age = age;
+   // }
+
+   Person(){
+      cout << "Parent Constructor...\n";
    }
 
+};
 
+class Student : public Person{
+   public:
+   int rollno;
 
-   //desctructor
-   ~Student(){
-      cout << "I delete Everything HEHE i am Destructor \n";
-      delete cgpaPtr;
+   Student(){
+      cout << "Child Constructor...\n";
    }
 
-
-    void getinfo(){
+   void getinfo(){
     cout << "name: " << name << endl;
-    cout << "cgpa: " << *cgpaPtr << endl;
+    cout << "rollno.: " << rollno << endl;
+    cout << "age: " << age << endl;
 
  }
 };
 
 int main(){
-   Student s1("mayank",8.4);
-   
+   Student s1;
+   s1.name ="Mayank";
+   s1.age =20;
+   s1.rollno = 65;
    s1.getinfo();
-   
    return 0;
 }
+
+
+
+// class Student {
+//    public:
+    
+//    string name;
+//    double* cgpaPtr;
+
+//    Student(string name, double cgpa){
+//       this->name = name;
+//       cgpaPtr = new double;
+//       *cgpaPtr = cgpa;
+//    }
+
+
+
+//    //desctructor
+//    ~Student(){
+//       cout << "I delete Everything HEHE i am Destructor \n";
+//       delete cgpaPtr;
+//    }
+
+
+//     void getinfo(){
+//     cout << "name: " << name << endl;
+//     cout << "cgpa: " << *cgpaPtr << endl;
+
+//  }
+// };
+
+// int main(){
+//    Student s1("mayank",8.4);
+   
+//    s1.getinfo();
+   
+//    return 0;
+// }
 
 
 
