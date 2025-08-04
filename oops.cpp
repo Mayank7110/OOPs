@@ -2,47 +2,117 @@
 #include <string>
 using namespace std;
 
-//--------------------------------------Inheritance----------------------------//
-class Person{
-public:
-   string name;
-   int age;
 
-   //    Person(string name, int age){
-   //    this->name = name;
-   //    this->age = age;
-   // }
 
-   Person(){
-      cout << "Parent Constructor...\n";
-   }
+//----------------------------------Abstraction---------------------------------//
 
+class Shape{ // Abstract class
+   virtual void draw() =0; // pure virtual function
 };
 
-class Student : public Person{
-   public:
-   int rollno;
-
-   Student(){
-      cout << "Child Constructor...\n";
+class Circle : public Shape{
+public:
+   void draw(){
+      cout << "Drawing Circle" << endl;
    }
-
-   void getinfo(){
-    cout << "name: " << name << endl;
-    cout << "rollno.: " << rollno << endl;
-    cout << "age: " << age << endl;
-
- }
 };
 
 int main(){
-   Student s1;
-   s1.name ="Mayank";
-   s1.age =20;
-   s1.rollno = 65;
-   s1.getinfo();
+   Circle c1;
+   c1.draw();
    return 0;
 }
+
+
+
+//-----------------------------------Polymorphism-------------------------------//
+
+//Function overridding
+
+// class Parent{
+//    public:
+//    void getInfo(){
+//       cout << "Parentclass;" << endl;
+//    }
+// };
+
+// class Child : public Parent{
+//    public:
+//       void getInfo(){
+//       cout << "Child class" << endl;
+//    }
+// };
+
+// int main(){
+
+//    Child p1;
+//    p1.getInfo();
+// }
+
+//Compile time polymorphism:  constructor and function overloading same name diff parameters
+// class print{
+//    public:
+//    void show(int x ){
+//       cout << "int : "<< x << endl;
+//    }
+   
+//    void show(char x ){
+//       cout << "char : "<< x << endl;
+//    }
+// };
+
+
+// int main(){
+//    print p1;
+
+//    p1.show('&');
+//    return 0;
+// }
+
+
+
+
+//--------------------------------------Inheritance----------------------------//
+// class Person{
+// public:
+//    string name;
+//    int age;
+
+//    //    Person(string name, int age){
+//    //    this->name = name;
+//    //    this->age = age;
+//    // }
+
+//    Person(){
+//       cout << "Parent Constructor...\n";
+//    }
+
+// };
+
+// class Student : public Person{
+//    public:
+//    int rollno;
+
+//    Student(){
+//       cout << "Child Constructor...\n";
+//    }
+
+//    void getinfo(){
+//     cout << "name: " << name << endl;
+//     cout << "rollno.: " << rollno << endl;
+//     cout << "age: " << age << endl;
+
+//  }
+// };
+
+// int main(){
+//    Student s1;
+//    s1.name ="Mayank";
+//    s1.age =20;
+//    s1.rollno = 65;
+//    s1.getinfo();
+//    return 0;
+// }
 
 
 
